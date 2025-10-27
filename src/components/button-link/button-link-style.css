@@ -1,0 +1,21 @@
+.success,
+.dark {
+  border: 1px solid #959595;
+  border-radius: 5px;
+  text-decoration: none;
+  padding: 0.3em 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  width: fit-content;
+
+}
+.success {
+  background-color: #9EDE98;
+  color: #000;
+}
+
+.dark {
+  background-color: #8c8c8c;
+  color: #FFF;  
+}
