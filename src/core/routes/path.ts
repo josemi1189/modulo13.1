@@ -1,6 +1,6 @@
 export const path = {
    login: "/",
-   accountList: "/account-list",
+   accountList: "/account-list/",
    newAccount: "/new-account",
    transfers: "/transfers",
    editAccount: "/edit-account/:id",

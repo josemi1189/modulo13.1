@@ -1,1 +1,1 @@
-export * from './movement-list';
+export * from './movement-page';

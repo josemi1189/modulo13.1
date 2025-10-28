@@ -1,8 +1,8 @@
 @import '@/assets/css/css-variables.css';
-/* AHORA */
+
 
 .value-negative {
-   color: var(--red-color);
+   color: var(--danger);
 }
 
 #movements-header {
@@ -86,7 +86,7 @@
 
    }
    .row-movements:nth-child(odd) {
-      background-color: var(--grey-color);
+      background-color: var(--bg-rows-table);
    }
 
    .row-movements span:nth-child(4),

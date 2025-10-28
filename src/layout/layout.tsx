@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import "./layout-style.css";
 import { UserContext } from "@/core/context";
 import { Navbar } from "@/components/navbar/navbar";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { path } from "@/core/routes";
 
 interface Props {
@@ -15,14 +15,22 @@ export const Layout: React.FC<Props> = (props) => {
   const navigate = useNavigate();
 
   const logout = () => {
-    console.log("Cierra");
     setNombreUsuario("");
     navigate(path.login);
   };
   return (
     <div className="container" key={"Session"}>
       <header>
-        <img src="/public/assets/logo_header_white.svg" alt="Logo AHBC" />
+        {nombreUsuario !== "" ? (
+          <Link to={path.accountList}>
+            <img src="/assets/logo_header_white.svg" alt="Logo AHBC" />
+          </Link>
+        ) : (
+          <Link to={path.login}>
+            <img src="/assets/logo_header_white.svg" alt="Logo AHBC" />
+          </Link>
+        )}
+
         {nombreUsuario !== "" ? (
           <>
             <p>Bienvenido {nombreUsuario}</p>

@@ -2,11 +2,10 @@ import React from "react";
 import { MovementsModel } from "./model.movement";
 
 export const MovementRow: React.FC<MovementsModel> = (props) => {
-  const { id, description, amount, balance, transaction, realTransaction } =
-    props;
+  const { description, amount, balance, transaction, realTransaction } = props;
 
   return (
-    <div className="row-movements" key={id}>
+    <div className="row-movements">
       <span>{transaction.slice(0, 10)}</span>
       <span>{realTransaction.slice(0, 10)}</span>
       <span>{description}</span>

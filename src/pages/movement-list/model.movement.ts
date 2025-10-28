@@ -7,3 +7,12 @@ export interface MovementsModel {
   realTransaction: string;
   accountId: string;
 }
+
+export interface AccountList {
+  id: string,
+  iban: string,
+  type: string,
+  name: string,
+  balance: number,
+  lastTransaction: string,
+}
