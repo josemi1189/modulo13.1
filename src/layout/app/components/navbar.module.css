@@ -1,6 +1,5 @@
-@import '@/assets/css/css-variables.css';
 
-nav {
+.navbar {
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
@@ -11,8 +10,13 @@ nav {
    padding: 0.8em;
    column-gap: 3em;
 
+   span:hover, span.selected {
+      border-bottom: 4px solid var(--primary-color);
+      transition: all 0.5ms;
+   }
    a {
       text-decoration: none;
       color: #FFFFFF;
    }
+
 }

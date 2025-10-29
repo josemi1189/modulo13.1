@@ -1,5 +1,5 @@
 import { Layout } from "@/layout";
-import "./movements-style.css";
+import classes from "./movements.page.module.css";
 import { getMovements, getAccountList } from "./api/movements-api";
 import { AccountList, MovementsModel } from "./model.movement";
 import { MovementRow } from "./movement-row";
@@ -27,19 +27,19 @@ export const MovementListPage = () => {
 
   return (
     <Layout>
-      <div id="movements-header">
+      <div className={classes.movementsHeader}>
         <span>Saldos y últimos movimientos</span>
-        <div id="balance">
+        <div className={classes.balance}>
           <span>SALDO DISPONIBLE</span>
           <span>{dataAccount && dataAccount.balance}</span>
         </div>
       </div>
-      <div className="iban">
+      <div className={classes.iban}>
         <span>Gastos mes</span>
         <span>{dataAccount && dataAccount.iban}</span>
       </div>
-      <div id="movements">
-        <div className="header-movements">
+      <div className={classes.movements}>
+        <div className={classes.headerMovements}>
           <span>FECHA</span>
           <span>FECHA VALOR</span>
           <span>DESCRIPCIÓN</span>

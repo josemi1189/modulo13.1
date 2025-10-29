@@ -1,28 +1,26 @@
 import React from "react";
 
 interface User {
-   nombreUsuario: string;
-   setNombreUsuario: (nombre: string) => void;
+  userName: string;
+  setUserName: (nombre: string) => void;
 }
 
 export const UserContext = React.createContext<User>({
-   nombreUsuario: "",
-   setNombreUsuario: () => {},
+  userName: "",
+  setUserName: () => {},
 });
 
 interface Props {
-   children: React.ReactNode;
+  children: React.ReactNode;
 }
 
-export const DataUserContext : React.FC<Props> = (props) => {
-   const { children } = props;
-   const [nombreUsuario, setNombreUsuario] = React.useState<string>("");
+export const DataUserContext: React.FC<Props> = (props) => {
+  const { children } = props;
+  const [userName, setUserName] = React.useState<string>("");
 
-
-   return (
-      <UserContext.Provider value={{ nombreUsuario, setNombreUsuario}}>
-         { children }
-      </UserContext.Provider>
-   )
-
+  return (
+    <UserContext.Provider value={{ userName, setUserName }}>
+      {children}
+    </UserContext.Provider>
+  );
 };

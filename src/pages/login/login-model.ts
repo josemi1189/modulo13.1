@@ -1,10 +1,19 @@
-export interface CredentialModel {
+export interface Credentials {
    user: string;
    password: string;
 }
 
-export const createEmptyCredential = (): CredentialModel => ({
+export const createEmptyCredential = (): Credentials => ({
    user: "",
    password: "",
 });
 
+export interface CredentialsFormErrors {
+   user: string,
+   password: string,
+};
+
+export const createEmptyCredentialsFormErrors = (): CredentialsFormErrors => ({
+   user: "",
+   password: "",
+})
