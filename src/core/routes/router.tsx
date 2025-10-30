@@ -4,7 +4,7 @@ import { path } from "./path";
 
 import {
   LoginPage,
-  NewAccountPage,
+  NewAccount,
   AccountListPage,
   MovementListPage,
   Transfers,
@@ -15,7 +15,7 @@ export const Router: React.FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path={path.login} element={<LoginPage />} />
-        {<Route path={path.newAccount} element={<NewAccountPage />} />}
+        {<Route path={path.newAccount} element={<NewAccount />} />}
         <Route path={path.accountList} element={<AccountListPage />} />
         <Route path={path.movements} element={<MovementListPage />} />
         <Route path={path.transfers} element={<Transfers />} />
