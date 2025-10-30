@@ -10,8 +10,10 @@ export const MovementRow: React.FC<MovementsModel> = (props) => {
       <span>{transaction.slice(0, 10)}</span>
       <span>{realTransaction.slice(0, 10)}</span>
       <span>{description}</span>
-      <span className={amount < 0 ? "value-negative" : ""}>{amount}</span>
-      <span className={balance < 0 ? "value-negative" : ""}>{balance}</span>
+      <span className={amount < 0 ? classes.valueNegative : ""}>{amount}</span>
+      <span className={balance < 0 ? classes.valueNegative : ""}>
+        {balance}
+      </span>
     </div>
   );
 };

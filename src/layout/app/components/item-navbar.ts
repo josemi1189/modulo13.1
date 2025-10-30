@@ -11,10 +11,6 @@ export const Menu:linkMenu[] = [
       contain: "Mis cuentas",      
    },
    {
-      linkTo: path.movements,
-      contain: "Movimientos",
-   },
-   {
       linkTo: path.transfers,
       contain: "Transferencias",      
    }

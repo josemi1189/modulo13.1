@@ -35,9 +35,8 @@ export const AccountListPage = () => {
           <span>OPERACIÓN</span>
         </div>
       </div>
-      {accountList.map((account) => (
-        <AccountRow key={account.id} {...account} />
-      ))}
+
+      <AccountRow accountList={accountList} />
     </Layout>
   );
 };

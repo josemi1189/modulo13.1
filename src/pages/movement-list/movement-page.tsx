@@ -4,21 +4,28 @@ import { getMovements, getAccountList } from "./api/movements-api";
 import { AccountList, MovementsModel } from "./model.movement";
 import { MovementRow } from "./movement-row";
 import React from "react";
+import { useParams } from "react-router-dom";
 
 export const MovementListPage = () => {
   const [movements, setMovements] = React.useState<MovementsModel[]>([]);
   const [dataAccount, setDataAccount] = React.useState<AccountList>();
 
+  const { id } = useParams();
+
   React.useEffect(() => {
     const readMovements = async () => {
-      getMovements("1").then((data) => {
-        setMovements(data);
-      });
+      if (id) {
+        getMovements(id).then((data) => {
+          setMovements(data);
+        });
+      }
     };
 
     const readDataAccount = async () => {
-      const data = await getAccountList("1");
-      setDataAccount(data[0]);
+      if (id) {
+        const data = await getAccountList(id);
+        setDataAccount(data[0]);
+      }
     };
 
     readMovements();

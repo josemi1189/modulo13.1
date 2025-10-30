@@ -168,6 +168,15 @@ input {
   width: 100%;
 }
 
+select {
+  font-family: inherit;
+  font-size: 0.9em;
+  line-height: 1.15;
+  padding: 0.3em;
+  border-radius: var(--element-radius);
+  margin: 0;
+}
+
 button {
   background: var(--primary-color);
   border: none;

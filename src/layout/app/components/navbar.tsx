@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu } from "./model-navbar";
+import { Menu } from "./item-navbar";
 import { Link, useLocation } from "react-router-dom";
 import classes from "./navbar.module.css";
 
