@@ -23,7 +23,9 @@ export const AccountListPage = () => {
       <div className={classes.accountHeader}>
         <span>Mis cuentas</span>
         <div className={classes.btnNewAccount}>
-          <button value={"newAccount"}>NUEVA CUENTA</button>
+          <button id="newAccount" name="newAccount" value={"newAccount"}>
+            NUEVA CUENTA
+          </button>
         </div>
       </div>
       <div className={classes.movements}>
