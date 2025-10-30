@@ -1,27 +1,30 @@
 import React from 'react';
-import { generatePath } from "react-router-dom";
 import { path } from "@/core/routes";
-import { useNavigate } from "react-router-dom";
   
   export const ACTION_NONE = "";
   export const ACTION_TRANSFER = "1";
   export const ACTION_MOVEMENTS = "2";
   
+  /**
+   * Se ejecuta cuando se modifica el desplegable de operaciones posibles en una cuenta. 
+   * @param event Evento onChange del select
+   * @returns {string} Destino de la página que debe cargar.
+   */
   export const handleSelectedOptionChange = (
-    e: React.ChangeEvent<HTMLSelectElement>,
-    id: string
-  ) => {
+    event: React.ChangeEvent<HTMLSelectElement>
+  ):string => {
 
-    const navigate = useNavigate();
     
-    switch (e.target.value) {
+    let url = "";
+    switch (event.target.value) {
       case ACTION_MOVEMENTS:
-        navigate(generatePath(path.movements, { id: id }));
+        url = path.movements;
         break;
       case ACTION_TRANSFER:
-        navigate(generatePath(path.transfersFromAccount, { id: id }));
+        url = path.transfersFromAccount;
         break;
     }
+    return url;
   };
 
   const formatDate = (value: string): string => {

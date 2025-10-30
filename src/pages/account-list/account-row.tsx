@@ -8,6 +8,7 @@ import {
   ACTION_MOVEMENTS,
   ACTION_TRANSFER,
 } from "./handle-selected-option";
+import { generatePath, useNavigate } from "react-router-dom";
 
 interface Props {
   accountList: Account[];
@@ -15,6 +16,7 @@ interface Props {
 
 export const AccountRow: React.FC<Props> = (props) => {
   const { accountList } = props;
+  const navigate = useNavigate();
 
   return (
     <>
@@ -29,8 +31,12 @@ export const AccountRow: React.FC<Props> = (props) => {
           <select
             name="option"
             className="select"
-            onChange={(e) => {
-              handleSelectedOptionChange(e, account.id);
+            onChange={(event) => {
+              navigate(
+                generatePath(handleSelectedOptionChange(event), {
+                  id: account.id,
+                })
+              );
             }}
           >
             <option id="selection" value={ACTION_NONE}>
